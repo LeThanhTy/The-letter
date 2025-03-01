@@ -549,7 +549,7 @@ body {
         
 @media screen and (max-width: 600px) {
     .container {
-        width: 400px;
+        width: 350px;
         margin: 0 auto;
     }
 
@@ -558,12 +558,12 @@ body {
     }
 
     .parent {
-        width:400px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
     }
 
     .parent > div {
-        padding: 10px 0;
+        padding: 9px 0;
         font-size: 8px;
     }
 
