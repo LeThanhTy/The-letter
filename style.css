@@ -59,6 +59,7 @@ body {
     position: relative;
     display: grid;
     place-items: center;
+    height: calc(100vh - 20px);
 }
 
 .text {
@@ -68,7 +69,7 @@ body {
     font-size: 17px;
     font-weight: bold;
     margin: 20px 0;
-    top: 18%;
+    bottom: 0;
     background-color: pink;
     color: rgb(188, 0, 0);
     padding: 20px;
@@ -549,7 +550,7 @@ body {
         
 @media screen and (max-width: 600px) {
     .container {
-        width: 350px;
+        width: 300px;
         margin: 0 auto;
     }
 
@@ -558,12 +559,12 @@ body {
     }
 
     .parent {
-        width: 350px;
-        height: 350px;
+        width: 300px;
+        height: 300px;
     }
 
     .parent > div {
-        padding: 9px 0;
+        padding: 8px 0;
         font-size: 8px;
     }
 
