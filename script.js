@@ -208,6 +208,7 @@ function loadQuestions() {
 
 // Kiểm tra đáp án
 function checkAnswer(selected) {
+    var radio = document.querySelectorAll(`input[name=question${currentQuestionIndex}]`);
     let q = questions[currentQuestionIndex];
     let explanation = document.getElementById("info" + currentQuestionIndex);
     if (selected === q.correct) {
@@ -215,15 +216,21 @@ function checkAnswer(selected) {
         explanation.innerHTML = q.info;
         explanation.style.color = "green";
         explanation.style.display = "block"; // Hiện giải thích
+        radio.forEach(r => r.disabled = true); // Bỏ chọn radio
         setTimeout(() => {
             currentQuestionIndex++; // Chuyển sang câu tiếp theo
+            radio.forEach(r => r.disabled = false); // Bỏ chọn radio
             loadQuestions();
         }, 2000); // Sau 1.5 giây chuyển câu tiếp theo
     } else {
         explanation.innerHTML = "❌ Sai rồi! Hãy thử lại.";
         explanation.style.color = "red";
         explanation.style.display = "block";
-        setTimeout(() => explanation.innerHTML = "", 1000);
+        radio.forEach(r => r.disabled = true); // Không cho chọn lại
+        setTimeout(() => {
+            radio.forEach(r => r.disabled = false); // Cho chọn lại
+            explanation.innerHTML = "";
+        }, 1000);
     }
 }
 
@@ -235,16 +242,14 @@ loadQuestions();
 
 function createFlower() {
     const flower = document.createElement("div");
-    var block = document.getElementById("col-1");
+    var block = document.getElementById("title");
     flower.classList.add("flower");
     flower.innerHTML = "🌹"; // Ký tự hoa
     block.appendChild(flower);
 
 
     // Random vị trí và kích thước
-    let size = Math.random() * 20 + 10; // Kích thước từ 10px đến 25px
-
-    flower.style.left = Math.random() * window.innerWidth - 40 + "px";
+    flower.style.left = Math.random() * 70 + "vw"; // Vị trí ngang từ 0 đến 100vw
     flower.style.animationDuration = Math.random() * 5 + 3 + "s"; // Thời gian rơi từ 3s đến 8s
     flower.style.animationDelay = Math.random() * 2 + "s"; // Trễ ngẫu nhiên để rơi không đồng bộ
 
