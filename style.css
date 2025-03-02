@@ -11,7 +11,7 @@ body {
 }
 
 .container{
-    width: 1200px;
+    width: calc(100vw - 20px);
     margin: 0 auto;
 
 }
@@ -58,21 +58,22 @@ body {
 }
 
 .title{
-    position: relative;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: calc(100vh - 50px);
-    margin: 0 auto;
+    padding: 20px;
 }
 
 .text {
     display: none;
+    margin: 20px;
     text-align: center;
     font-size: 17px;
     font-weight: bold;
     line-height: 1.5;
     bottom: 0;
-    background-color: pink;
+    background-color: rgb(255, 255, 255);
     color: rgb(188, 0, 0);
     padding: 20px;
     border-radius: 5px;
@@ -93,6 +94,7 @@ body {
 .col-2 {
     margin: 20px 0;
     width: fit-content;
+    padding: 0 40px;
 }
 
 .button{
@@ -552,7 +554,12 @@ body {
         
 @media screen and (max-width: 600px) {
     .container {
-        width: fit-content;
+        width: max-content;
+        background-color: rgba(245, 222, 179, 0.503);
+    }
+
+    .title{
+        flex-direction: column;
     }
 
     .text{
@@ -578,6 +585,11 @@ body {
 
     .two-col{
         flex-direction: column;
+    }
+
+    .col-1{
+        width: 350px;
+        position: relative;
     }
 
     .col-2{
