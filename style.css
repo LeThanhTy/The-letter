@@ -554,8 +554,8 @@ body {
         
 @media screen and (max-width: 600px) {
     .container {
-        width: fit-content;
-        height: calc(100vh - 50px);
+        width: calc(100vw - 20px);
+        height: calc(70vh - 50px);
     }
 
     .title{
@@ -565,7 +565,7 @@ body {
     .text{
         display: none;
         text-align: center; 
-        font-size: 9px;
+        font-size: 10px;
     }
 
     .quiz-container {
