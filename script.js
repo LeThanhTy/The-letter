@@ -111,10 +111,16 @@ const questions = [
         info: "Ngày 8/3 có nguồn gốc từ phong trào đấu tranh của công nhân nữ đòi quyền lợi vào đầu thế kỷ 20."
     },
     {
-        question: "2. Năm nào Liên Hợp Quốc chính thức công nhận ngày 8/3 là Ngày Quốc tế Phụ nữ?",
-        options: ["1910", "1945", "1977", "2000"],
-        correct: "1977",
-        info: "Liên Hợp Quốc chính thức công nhận ngày 8/3 là Ngày Quốc tế Phụ nữ vào năm 1977."
+        question: "2. Phụ nữ Việt Nam có truyền thống đấu tranh mạnh mẽ qua những cuộc khởi nghĩa nào?",
+        options: [
+            "Khởi nghĩa Hai Bà Trưng",
+            "Khởi nghĩa Bà Triệu",
+            "Khởi nghĩa chống thực dân Pháp",
+            "Cả A, B và C đều đúng"
+
+        ],
+        correct: "Cả A, B và C đều đúng",
+        info: "Phụ nữ Việt Nam có truyền thống đấu tranh mạnh mẽ, tiêu biểu là cuộc khởi nghĩa Hai Bà Trưng, Bà Triệu và kháng chiến chống thực dân Pháp."
     },
     {
         question: "3. Chủ đề chính thức của Ngày Quốc tế Phụ nữ do Liên Hợp Quốc đưa ra mỗi năm nhằm mục đích gì?",
@@ -162,10 +168,15 @@ const questions = [
         info: "Các hành động như chia sẻ công việc gia đình, khuyến khích phụ nữ tham gia vào nhiều lĩnh vực và phản đối định kiến giới đều giúp thúc đẩy bình đẳng giới."
     },
     {
-        question: "8. Hoa nào thường được tặng nhiều nhất vào ngày 8/3?",
-        options: ["Hoa hồng", "Hoa hướng dương", "Hoa cẩm chướng", "Hoa sen"],
-        correct: "Hoa hồng",
-        info: "Hoa hồng là loại hoa được tặng nhiều nhất vào ngày 8/3 để bày tỏ sự trân trọng và yêu thương."
+        question: "8. Bác Hồ đã trao tặng 8 chữ vàng cho Phụ nữ Việt Nam. Đó là 8 chữ gì?",
+        options: [
+            "Anh hùng, trung hậu, bất khuất, dũng cảm",
+            "Anh hùng, hiên ngang, bất khuất, đảm đang",
+            "Anh hùng, bất khuất, trung hậu, đảm đang",
+            "Anh hùng, trung hậu, mạnh mẽ, hiên ngang"
+        ],
+        correct: "Anh hùng, bất khuất, trung hậu, đảm đang",
+        info: "Bác Hồ đã trao tặng phụ nữ Việt Nam 8 chữ vàng: Anh hùng, Bất khuất, Trung hậu, Đảm đang trong thời kỳ kháng chiến chống Mỹ, nhằm tôn vinh những đóng góp to lớn của họ trong sự nghiệp giải phóng dân tộc."
     }
 ];
 
@@ -192,7 +203,7 @@ function loadQuestions() {
         text.style.display = "block";
     }
     else {
-        quizContainer.innerHTML = `
+        quizContainer.innerHTML = `<div class="q"><div>
             <div class="question">${q.question}</div>
             <div class="answers">
                 ${q.options.map(option => `
@@ -202,6 +213,7 @@ function loadQuestions() {
                 `).join("")}
             </div>
             <div class="info" id="info${currentQuestionIndex}">${q.info}</div>
+            </div></div>
         `;
     }
 }
