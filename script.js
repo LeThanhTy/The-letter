@@ -249,7 +249,7 @@ function createFlower() {
 
 
     // Random vị trí và kích thước
-    flower.style.left = Math.random() * 70 + 1 + "vw"; // Vị trí ngang từ 0 đến 100vw
+    flower.style.left = Math.random() * 90 + 1 + "vw"; // Vị trí ngang từ 0 đến 100vw
     flower.style.animationDuration = Math.random() * 5 + 3 + "s"; // Thời gian rơi từ 3s đến 8s
     flower.style.animationDelay = Math.random() * 2 + "s"; // Trễ ngẫu nhiên để rơi không đồng bộ
 
